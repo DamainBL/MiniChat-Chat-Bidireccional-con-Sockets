@@ -53,7 +53,7 @@ def start_server():
                 break
             client_socket.send(msg.encode('utf-8'))
     except ConnectionRefusedError:
-        print("No se pudo conectar al servidor. Asegúrate de que esté ejecutándose.")
+        print("No se pudo conectar al cliente.")
     finally:
         client_socket.close()
         server_socket.close()
@@ -61,6 +61,7 @@ def start_server():
 
 if __name__ == "__main__":
     start_server()
+
 
 
 
