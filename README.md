@@ -39,7 +39,11 @@ Cuando un cliente se conecta, el servidor crea un socket dedicado para esa conex
 
 Tanto en el servidor como en el cliente:
 
-    def receive_messages(socket):
+Un hilo escucha mensajes entrantes.
+
+    threading.Thread(target=receive_messages, args=(client_socket,), daemon=True).start()
+    -----------------------------------------------------------------------------------------
+        def receive_messages(socket):
         while True:
             try:
                 data = sock.recv(1024)
@@ -49,10 +53,6 @@ Tanto en el servidor como en el cliente:
                 print("\nServidor/cliente:", data.decode('utf-8'))
             except:
                 break
-
-Un hilo escucha mensajes entrantes.
-
-    threading.Thread(target=receive_messages, args=(client_socket,), daemon=True).start()
 
 El hilo principal lee lo que escribe el usuario y lo envía.
     
