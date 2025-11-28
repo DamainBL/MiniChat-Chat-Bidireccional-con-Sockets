@@ -10,7 +10,7 @@ es una aplicación simple de mensajería en consola que utiliza sockets TCP y mu
 ## Estructura del Proyecto
 
     PyMiniChat/
-    │──server.py # Servidor que recibe y envía mensajes
+    │── server.py # Servidor que recibe y envía mensajes
     │── client.py # Cliente que se conecta al servidor
     └── README.md
 
